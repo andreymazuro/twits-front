@@ -1,0 +1,20 @@
+.Post {
+  display: flex;
+  flex-direction: row
+}
+
+.Avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.Post-Body {
+  display: flex;
+  flex-direction: column;
+}
+
+.Post-footer-text {
+  fontSize: 5px;
+  marginTop: -5px;
+}
