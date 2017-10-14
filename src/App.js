@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import * as actionCreators from './Actions/userActions'
+
 import './App.css';
 import MainPage from './Components/MainPage'
 
-class App extends Component {
+class AppView extends Component {
+
+  componentDidMount(){
+    const { actions } = this.props
+    actions.checkIfAuthorized()
+  }
 
   render() {
+    console.log(this.props)
     return (
       <div className="App">
         <MainPage />
@@ -14,4 +24,13 @@ class App extends Component {
   }
 }
 
-export default App;
+const App = connect(
+  store => ({
+    user: store.user,
+  }),
+  dispatch => ({
+    actions: bindActionCreators(actionCreators, dispatch)
+  })
+)(AppView);
+
+export default App

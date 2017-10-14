@@ -5,13 +5,13 @@ class Post extends React.Component{
     const { post } = this.props
     return(
       <div className="Post">
-        <img src={post.imageUrl} className="Avatar"/>
+        <img src={post.user.avatarurl} alt="" className="Avatar"/>
         <div className="Post-body">
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <p className="Post-footer-text" style={{ marginLeft: '10px'}}>{post.author}</p>
-            <p className="Post-footer-text">{post.date}</p>
+            <p className="Post-footer-text">{post.user.fullname}</p>
+            <p className="Post-footer-text" style={{ marginLeft: 10 }}>{post.created_at}</p>
           </div>
-          <p>{post.content}</p>
+          <p className="Post-content">{post.content}</p>
         </div>
       </div>
     )

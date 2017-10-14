@@ -1,6 +1,40 @@
 .Post {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+input.log-in{
+  margin: 0;
+  background-color: #fff;
+  color: blue;
+  padding: 6px 20px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid blue;
+  border-radius: 10px;
+  transition: all 0.1s ease-out 0s;
+  height: 40px;
+}
+
+.Feed {
+  display: flex;
+  flex: 1;
 }
 
 .Avatar {
@@ -9,12 +43,26 @@
   width: 50px;
 }
 
-.Post-Body {
+.Post-body {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  flex-wrap: space-between;
+  margin-left: 10px;
 }
 
 .Post-footer-text {
-  fontSize: 5px;
-  marginTop: -5px;
+  font-size: 15px;
+  margin-top: -3px;
+}
+
+.Post-content {
+  margin-top: -7px;
+}
+
+.Header {
+  display: flex;
+  height: 70px;
+  background-color: black;
+  flex: 1;
 }
