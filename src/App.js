@@ -15,7 +15,6 @@ class AppView extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         <MainPage />
