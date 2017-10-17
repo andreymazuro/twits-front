@@ -1,18 +1,20 @@
 import React from 'react'
-import Feed from '../Feed'
 import Header from '../Header'
-import LoginPage from '../LoginPage'
-import UserWall from '../UserWall'
-import { Route } from 'react-router-dom'
+import Feed from '../Feed'
 
 class MainPage extends React.Component{
   render(){
+    const { user, history, actions } = this.props
     return(
       <div>
-        {/* <Header /> */}
-        <Route exact path={'/'} component={LoginPage} />
-        <Route path={'/:username'} component={UserWall} />
-        <Route exact path={`/feed`} component={Feed} />
+        <Header
+          user={user}
+          actions={actions}
+          history={history}
+        />
+        <Feed
+          history={history}
+        />
       </div>
     )
   }

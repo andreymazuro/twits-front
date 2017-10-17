@@ -1,18 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
+
+import { Route } from 'react-router'
+
+import { history } from './store/configureStore'
+import configureStore from './store/configureStore';
+
+import StartPage from './components/StartPage'
+import UserWall from './components/UserWall'
+
+import './App.css'
 
 const store = configureStore()
 
-ReactDOM.render((
+ReactDOM.render(
   <Provider store={store} >
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>), document.getElementById('root'));
+    <ConnectedRouter history={history}>
+      <div>
+        <Route exact path={'/'} component={StartPage} />
+        <Route path={'/:username'} component={UserWall} />
+      </div>
+    </ConnectedRouter>
+  </Provider>, document.getElementById('root'));
 registerServiceWorker();

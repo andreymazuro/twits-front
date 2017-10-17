@@ -1,3 +1,7 @@
+.App {
+  height: 100vh;
+}
+
 .Post {
   display: flex;
   flex-direction: row;
@@ -7,8 +11,17 @@
 .login-page {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
-  margin-top: 20px;
+  height: 90vh;
+  padding-bottom: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 1.5s;
+}
+
+.form-error {
+  display: flex;
+  flex-direction: row;
 }
 
 input.log-in{
@@ -35,6 +48,8 @@ input.log-in{
 .Feed {
   display: flex;
   flex: 1;
+  background-color: #e6ecf0;
+  height: 90vh;
 }
 
 .Avatar {
@@ -51,7 +66,65 @@ input.log-in{
   margin-left: 10px;
 }
 
-.Post-footer-text {
+.add-post-btn {
+  background-color: #fff;
+  color: green;
+  padding: 6px 20px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid green;
+  border-radius: 10px;
+  transition: all 0.1s ease-out 0s;
+  height: 40px;
+}
+
+.add-post-textarea {
+  width: 80%;
+  margin-top: 10px;
+  border-radius: 5px;
+  min-height: 30px;
+}
+
+.add-post-textarea:focus {
+  min-height: 60px;
+}
+
+.add-post-btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px 20px 8px 20px;
+  text-decoration: none;
+}
+
+.add-post-btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+ .Post-footer-text {
   font-size: 15px;
   margin-top: -3px;
 }
@@ -60,9 +133,31 @@ input.log-in{
   margin-top: -7px;
 }
 
-.Header {
-  display: flex;
-  height: 70px;
-  background-color: black;
-  flex: 1;
+.login-page-form {
+  margin: 20px;
+}
+
+.twits-icon {
+  height: 35px;
+  width: 35px;
+  margin: 7px;
+}
+
+.twits-icon:hover {
+  cursor: pointer;
+}
+
+.header-list {
+  list-style-type: none;
+}
+
+.nav-button {
+  margin-left: 20px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.nav-button:hover {
+  cursor: pointer
 }

@@ -1,4 +1,5 @@
 import USER from '../action_types/user'
+import { push } from 'react-router-redux'
 
 export const logIn = (email, password) => {
   return (dispatch, store) => {
@@ -21,6 +22,7 @@ export const logIn = (email, password) => {
         else {
           localStorage.setItem('token', res.token)
           dispatch(authorizeUser(res.user))
+          dispatch(push('/'))
         }
       })
       .catch(err => console.log(err.message))
@@ -38,12 +40,16 @@ export const checkIfAuthorized = () => {
         'token': token
       },
     })
-      .then(res => res.json())
-      .then(res => dispatch(authorizeUser(res.user)))
-    .catch(err => console.log(err))
+        .then(res => res.json())
+        .then(res => {
+          dispatch(authorizeUser(res.user))
+        })
+      .catch(err => {
+        localStorage.removeItem('token')
+        console.log(err)
+      })
   }
 }
-
 
 export const authorizeUser = (userInfo) => {
   return {
