@@ -161,3 +161,11 @@ input.log-in{
 .nav-button:hover {
   cursor: pointer
 }
+
+.user-info-edit-textfield {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 10px;
+}

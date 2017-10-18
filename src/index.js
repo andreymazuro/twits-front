@@ -21,8 +21,8 @@ ReactDOM.render(
   <Provider store={store} >
     <ConnectedRouter history={history}>
       <div>
-        <Route exact path={'/'} component={StartPage} />
-        <Route path={'/:username'} component={UserWall} />
+        <Route path={'/'} component={StartPage} />
+        <Route exact path={'/:username'} component={UserWall} />
       </div>
     </ConnectedRouter>
   </Provider>, document.getElementById('root'));

@@ -13,7 +13,6 @@ class Feed extends React.Component{
     super();
     this.state = {
       posts: [],
-      showFormControls: false,
       postText: ''
     }
   }
@@ -41,28 +40,6 @@ class Feed extends React.Component{
       .catch(err => console.log(err))
   }
 
-  switchTextBoxControlsVisibility = (e) => {
-    const inputLength = e.target.value.length
-    const { showFormControls } = this.state
-    if (inputLength === 0 && showFormControls) {
-      this.setState({
-        showFormControls: false,
-        postText: e.target.value
-      })
-    }
-    else if (inputLength !== 0 && !showFormControls) {
-      this.setState({
-        showFormControls: true,
-        postText: e.target.value
-      })
-    }
-    else {
-      this.setState({
-        postText: e.target.value
-      })
-    }
-  }
-
   postTwit = () => {
     const content = this.state.postText
     postTwitReq(content)
@@ -70,7 +47,8 @@ class Feed extends React.Component{
    }
 
   render(){
-    const { posts, showFormControls } = this.state
+    const { posts, postText } = this.state
+    const showFormControls = postText.length !== 0
     return(
       <MuiThemeProvider>
         <div className="Feed">
@@ -78,7 +56,7 @@ class Feed extends React.Component{
           </div>
           <div style={{ flex: 2, display: 'flex', flexDirection: 'column', backgroundColor: 'white', marginTop: 10, alignItems: 'center' }}>
             <TextareaAutosize
-              onChange={(e) => this.switchTextBoxControlsVisibility(e) }
+              onChange={(e) => this.setState({ postText: e.target.value }) }
               ref={elem => this.textArea = elem}
               style={{ maxHeight: 80}}
               className="add-post-textarea"

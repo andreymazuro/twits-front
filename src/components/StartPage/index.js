@@ -29,7 +29,9 @@ class StartPageView extends React.Component{
            history={history}
          />
          :
-         <LoginPage />
+         <LoginPage
+           history={history}
+         />
         }
       </div>
     )

@@ -34,7 +34,7 @@ class Header extends React.Component{
                 targetOrigin={{horizontal: 'right', vertical: 'top'}}
                 anchorOrigin={{horizontal: 'right', vertical: 'top'}}
               >
-                <MenuItem primaryText="More info" />
+                <MenuItem onClick={() => history.push('/settings/user_info')} primaryText="User settings" />
                 <MenuItem onClick={this.logOut} primaryText="Log out" />
               </IconMenu>
             </div>
